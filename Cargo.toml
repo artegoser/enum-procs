@@ -1,15 +1,15 @@
 [package]
 name = "enum-procs"
-version = "0.2.0"
+version = "0.3.0"
 edition = "2021"
 
 authors = ["artegoser"]
 license = "MIT"
-description = "Procedural macros for enums."
+description = "Useful enum macros."
 repository = "https://github.com/artegoser/enum-procs"
 readme = "./README.md"
 keywords = ["macro", "procedural", "enum", "proc-macro"]
-categories = []
+categories = ["Rust patterns"]
 
 [lib]
 proc-macro = true

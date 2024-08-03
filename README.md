@@ -2,9 +2,9 @@
 
 Useful enum macros
 
-## Usage
+[![crates.io](https://img.shields.io/crates/v/enum-procs.svg)](https://crates.io/crates/enum-procs)
 
-### AutoFrom
+## AutoFrom
 
 Derive macro generating an impl of the trait `From` for all types
 inside tuple variants with one type
@@ -23,7 +23,7 @@ assert_eq!(Test::from("Test"), Test::Text("Test".to_owned()));
 ```
 
 
-### PartialEqVariant
+## PartialEqVariant
 
 Derive macro generating an impl of the trait `PartialEq` that compare enum only by variant
 
