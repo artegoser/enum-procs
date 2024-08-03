@@ -9,7 +9,7 @@ description = "Useful enum macros."
 repository = "https://github.com/artegoser/enum-procs"
 readme = "./README.md"
 keywords = ["macro", "procedural", "enum", "proc-macro"]
-categories = ["Rust patterns"]
+categories = ["rust-patterns"]
 
 [lib]
 proc-macro = true
