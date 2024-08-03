@@ -1,13 +1,36 @@
 # enum-procs
 
-Rust macros for enums
+Useful enum macros
 
 ## Usage
+
+### AutoFrom
+
+Derive macro generating an impl of the trait `From` for all types
+inside tuple variants with one type
+
+```rust
+use enum_procs::AutoFrom;
+
+#[derive(AutoFrom, Debug, PartialEq, Eq)]
+enum Test {
+    Bool(bool),
+    Text(String),
+}
+
+assert_eq!(Test::from(true), Test::Bool(true));
+assert_eq!(Test::from("Test"), Test::Text("Test".to_owned()));
+```
+
+
+### PartialEqVariant
+
+Derive macro generating an impl of the trait `PartialEq` that compare enum only by variant
 
 ```rust
 use enum_procs::PartialEqVariant;
 
-#[derive(PartialEqVariant)]
+#[derive(PartialEqVariant, Eq)]
 enum EnumProc {
     VariantWithValue(bool),
     AnotherVariantWithValue(bool),
@@ -15,7 +38,4 @@ enum EnumProc {
 
 assert!(EnumProc::VariantWithValue(true) == EnumProc::VariantWithValue(false));
 assert!(EnumProc::VariantWithValue(false) == EnumProc::VariantWithValue(true));
-
-assert!(EnumProc::VariantWithValue(true) != EnumProc::AnotherVariantWithValue(false));
-assert!(EnumProc::VariantWithValue(false) != EnumProc::AnotherVariantWithValue(true));
 ```

@@ -2,7 +2,7 @@ use enum_procs::PartialEqVariant;
 
 #[test]
 fn partial_eq_variant() {
-    #[derive(PartialEqVariant)]
+    #[derive(PartialEqVariant, Eq)]
     enum EnumProc {
         VariantWithValue(bool),
         AnotherVariantWithValue(bool),
